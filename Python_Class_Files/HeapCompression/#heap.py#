@@ -1,0 +1,173 @@
+from swap import swap
+#from aifc import data
+
+def less(x, y):
+    return x < y
+
+def less_key(x, y):
+    return x.key < y.key
+
+def left(i):
+    return 2 * i + 1
+
+def right(i):
+    return 2 * (i + 1)
+
+def parent(i):
+    return (i-1) / 2
+
+# Student code -- fill in all the methods that have pass as the only statement
+class Heap:
+    def __init__(self, data, 
+                 less = less):
+        self.data = data
+        self.less = less
+        self.build_min_heap()
+        
+    def __repr__(self):
+        return repr(self.data)
+    
+    def minimum(self): 
+        return self.data[0].key
+
+    def insert(self, obj):
+        self.data.append(obj)
+        self.build_min_heap()
+
+    def extract_min(self): #pop Swap the first and last then rebalance
+        min_value = self.data[0]
+        self.data[0] = self.data[len(self.data)-1]
+        self.min_heapify(0)
+        return min_value
+        
+        
+    def min_heapify(self, i):
+        n = len(self.data)
+        H = self.data
+      #  least = i
+        l = left(i)
+        r = right(i)
+        if l < n and H[i] > H[l]:
+            least = l
+        else:
+            least = i
+        if r < n and H[least] > H[r]:
+            least = r
+        if least != i:
+            swap(H, i, least)
+            self.min_heapify(least)
+    
+    def build_min_heap(self):
+        n = len(self.data)
+        last_parent = n / 2 -1
+        for i in range(last_parent, -1, -1):
+           self.min_heapify(i)
+
+    
+class PriorityQueue:from swap import swap
+
+def less(x, y):
+    return x < y
+
+def less_key(x, y):
+    return x.key < y.key
+
+def left(i):
+    return 2 * i + 1
+
+def right(i):
+    return 2 * (i + 1)
+
+def parent(i):
+    return (i-1) / 2
+
+# Student code -- fill in all the methods that have pass as the only statement
+class Heap:
+    def __init__(self, data, 
+                 less = less):
+        self.data = data
+        self.less = less
+        self.build_min_heap()
+        
+    def __repr__(self):
+        return repr(self.data)
+    
+    def minimum(self): #peek at lowest point returns the smallest value
+        return self.data[0].key
+
+    def insert(self, obj): #push add an element then balance
+        self.data.append(obj)
+        #self.min_heapify(len(self.data) - 1)
+        self.build_min_heap()
+
+    def extract_min(self): #pop Swap the first and last then balance
+        data = self.data[0]
+        self.data[0] = self.data[len(self.data)-1]
+        self.min_heapify(0)
+        return data
+
+    def min_heapify(self, i):
+        least = i
+        l = left(i)
+        r = right(i)
+        length = len(self.data)
+        if(l < length and self.data[i].key > self.data[l].key):
+            least = l
+        if(r < length and self.data[least].key > self.data[r].key):
+            least = r
+        if(least != i):
+            swap(self.data, i, least)
+            self.min_heapify(least)
+
+    def build_min_heap(self):
+        current = len(self.data)
+        parent = current / 2 - 1
+        for i in range(parent, -1, -1):
+            self.min_heapify(i)
+        #self.connect()
+        print self.data
+    
+    def connect(self):
+        length = len(self.data)
+        parent = length / 2 - 1
+        for i in range(parent, 0, 1):
+            l = left(i)
+            r = right(i)
+            if(l < parent):
+                self.data[i].left = self.data[left(i)]
+            if(r < parent):
+                self.data[i].right = self.data[right(i)]
+            
+    
+class PriorityQueue:
+    def __init__(self, less=less_key):
+        self.heap = Heap([], less)
+
+    def __repr__(self):
+        return repr(self.heap)
+
+    def push(self, obj):
+        self.heap.insert(obj)
+
+    def pop(self):
+        return self.heap.extract_min()
+
+if __name__ == "__main__":
+    # unit tests here
+    pass
+
+    def __init__(self, less=less_key):
+        self.heap = Heap([], less)
+
+    def __repr__(self):
+        return repr(self.heap)
+
+    def push(self, obj):
+        self.heap.insert(obj)
+
+    def pop(self):
+        return self.heap.extract_min()
+
+if __name__ == "__main__":
+    # unit tests here
+    pass

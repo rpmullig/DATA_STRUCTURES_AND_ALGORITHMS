@@ -1,0 +1,59 @@
+from stack import ArrayStack
+
+class BSTNode:
+    def __init__(self, key, left=None, right=None):
+        self.key = key
+        self.left = left
+        self.right = right
+
+def less_than(x,y):
+    return x < y
+
+def greater_than(x,y):
+    return x > y
+
+class BinarySearchTree:
+    def __init__(self, root = None, less=less_than, greater=greater_than):
+        self.root = root
+        self.parents = True
+        self.less = less
+        self.greater = greater
+
+    # takes value, returns node with key value
+    def insert(self, k):
+        pass
+        
+
+    # takes node, returns node
+    # return the node with the smallest key greater than n.key
+    def successor(self, n):
+        pass
+
+    # return the node with the largest key smaller than n.key
+    def predecessor(self, n):
+        pass
+
+    # takes key returns node
+    # can return None
+    def search(self, k):
+        
+        ## check if the key is already the node
+        if k is self.key:
+            return self
+        #
+ recursively call the key until you find it or it doesn't 
+        # exsist, in which case return none
+        if less(k, self):
+            return self.left.search(k,less)
+        else:
+            return none
+        if greater(k, self):
+            return self.right.search(k,greater)
+        else:
+            return none
+        
+            
+    # takes node, returns node
+    def delete_node(self, n):
+        pass
+
