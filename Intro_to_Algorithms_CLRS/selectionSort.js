@@ -14,10 +14,7 @@ var a = [ 5, 2, 4, 6, 1, 3, -100, -5, 156056406, 5];
 function selectionSort(a){
   var new_array = [], temp = 0, helper = []; 
     
-  /* javascript will only make a pointer to
-     the a array object--destructively mutating
-     it--so I much create a new one */
-  a.forEach(function(item) {
+    a.forEach(function(item) {
     new_array.push(item)
   });
   
