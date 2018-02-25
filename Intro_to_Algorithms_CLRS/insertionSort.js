@@ -2,7 +2,10 @@
 /*
 Author: Robert P Mulligan
 Created: 2/21/2018
-Run-time: N * Log(n)
+
+RAM Computational Model:
+	-n is the numbers in the array
+	-O(n^2)
 */ 
 
 

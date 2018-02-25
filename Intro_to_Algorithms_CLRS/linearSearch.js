@@ -2,7 +2,9 @@
 /*
 Author: Robert P Mulligan
 Created: 2/23/2018
-Run-time: N 
+RAM Computational Model:
+	-n is the number of integers in the array
+	-O(n) 
 */ 
 
 
