@@ -7,6 +7,10 @@ RAM Computational Model:
     -n is the numbers in the array
     -O(n^2)
     -space complexity O(n)
+    
+ This algorithm is like sorting cards.
+ From left to right, if your card is out of order, 
+ put it in order. If not move right to the next card
 */
 
 var a = [ 5, 2, 4, 6, 1, 3, -100, -5, 156056406, 5]; 
