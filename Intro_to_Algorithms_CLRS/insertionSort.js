@@ -26,4 +26,4 @@ function insertionSort(a){
   }
 }
 
-insertionSort(a)
+insertionSort(a);
