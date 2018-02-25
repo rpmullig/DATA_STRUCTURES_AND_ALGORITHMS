@@ -7,6 +7,10 @@ RAM Computational Model:
     -n is the numbers in the array
     -O((n+1)!)
     -highly inefficient, used for testing purposes only
+
+This algorithm is like shuffling cards, checking to see if
+they are in order. If the cards are out of order, reshuffle
+till and recheck--continue this till the elements are in order. 
 */
 
 var a = [12, 100, 30, -10, 1, 3, 501645, -150, 564, 1, 13];
