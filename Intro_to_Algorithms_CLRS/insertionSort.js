@@ -6,6 +6,10 @@ Created: 2/21/2018
 RAM Computational Model:
 	-n is the numbers in the array
 	-O(n^2)
+    
+ This algorithm is like sorting cards.
+ From left to right, if your card is out of order, 
+ put it in order. If not move right to the next card
 */ 
 
 
